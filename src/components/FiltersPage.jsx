@@ -10,21 +10,21 @@ const FiltersPage = () => {
 
   return (
     <div>
-      <div className="flex justify-evenly items-center">
-        <h1 className="text-4xl font-semibold">Search properties to rent</h1>
+      <div className="flex flex-col sm:flex-row justify-evenly items-center gap-4 xsm:gap-0">
+        <h1 className="sm:text-4xl text-2xl font-semibold">Search properties to rent</h1>
         <input
           type="text"
           placeholder="Search Properties"
-          className="border outline-none py-2 px-8 rounded-md"
+          className="border outline-none py-2 px-8 rounded-md w-full xsm:w-[300px]"
         />
       </div>
 
-      <div className="flex justify-evenly items-center mt-8">
+      <div className="sm:flex justify-evenly items-center mt-8">
         <div>
           <p>Enter City</p>
           <input
             type="text"
-            className="outline-none py-2 min-w-[150px] px-2 rounded-md"
+            className="outline-none py-2 sm:w-[150px] w-full px-2 rounded-md"
             onChange={(e) => setCity(e.target.value)}
           />
         </div>
@@ -32,13 +32,13 @@ const FiltersPage = () => {
           <p>Date</p>
           <input
             type="date"
-            className="outline-none py-2 min-w-[150px] px-2 rounded-md"
+            className="outline-none py-2 sm:w-[150px] w-full px-2 rounded-md"
             onChange={(e) => setDate(e.target.value)}
           />
         </div>
         <div>
           <p>Price</p>
-          <select className="py-2 min-w-[150px] px-2 rounded-md" onChange={(e) => setPrice(e.target.value)}>
+          <select className="py-2 sm:w-[150px] w-full px-2 rounded-md" onChange={(e) => setPrice(e.target.value)}>
             <option value="500">
               Rs. 0 - 500
             </option>
@@ -51,7 +51,7 @@ const FiltersPage = () => {
         </div>
         <div>
           <p>Property Type</p>
-          <select className="py-2 min-w-[150px] px-2 rounded-md" onChange={(e) => setProperty(e.target.value)}>
+          <select className="py-2 sm:w-[150px] w-full px-2 rounded-md" onChange={(e) => setProperty(e.target.value)}>
             <option value="all">All</option>
             <option value="house">House</option>
             <option value="farm-house">Farm houses</option>
@@ -59,9 +59,9 @@ const FiltersPage = () => {
             <option value="outdore">Outdore</option>
           </select>
         </div>
-        <div className="flex flex-col gap-2">
-        <button className="border border-[#4444dd] py-1 px-3 rounded-md" onClick={() => handleSearch(city, date, price, property)}>Submit</button>
-        <button className="border border-[#4444dd] py-1 px-3 rounded-md" onClick={() => resetSearch()}>Reset</button>
+        <div className="flex flex-col gap-2 mt-4 sm:mt-0">
+        <button className="border border-[#4444dd] py-1 px-3 rounded-md w-full sm:w-[100px]" onClick={() => handleSearch(city, date, price, property)}>Submit</button>
+        <button className="border border-[#4444dd] py-1 px-3 rounded-md w-full sm:w-[100px]" onClick={() => resetSearch()}>Reset</button>
         </div>
       </div>
     </div>
