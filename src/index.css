@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --color: #fff;
+    --bgcolor: #6c4ce7;
+    --shadowcolor: #4444dd;
+  }
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body{
+  background-color: #f1f1f1; 
+}
+
+.badge  {
+    -webkit-appearance:none;
+    appearance:none;
+    display: inline-block;
+    vertical-align:middle;
+    padding: 8px 15px;
+    background-color: var(--bgcolor);
+    color: var(--color);
+    border: none;
+    border-radius: 8px;
+    border-bottom-left-radius: 0;
+    font-family: Arial, sans-serif;
+    font-size: 1.1rem;
+    line-height:1.1em;
+    position:relative;
+    z-index: 1;
+    font-weight:bold;
+    word-spacing:.5rem;
+    white-space:nowrap;
+  }
+  .badge::after { 
+    position: absolute;
+    content: '';
+    height:1.2em;
+    width: 1.2em;
+    background: var(--shadowcolor);
+    bottom: -1.2em;
+    left: 0;
+    transform: scale(-1, 1);
+    clip-path: polygon(0 0, 0% 100%, 100% 0);
+    z-index: 0;
+  }
+  
+  .badge:before {
+    content:"+ +";
+    position:absolute;
+    z-index:2;
+    left:1.8em;
+    top:.2em;
+    margin:auto 0;
+    font-size: 1.25em;
+    display:flex;
+    width:1ch;
+    font-weight:bold;
+    line-height:.9;
+    font-size:1rem;
+    white-space:normal;
+  }
+  .badge::first-letter{
+    font-size:1em;
+    vertical-align:.1rem;
+  }
